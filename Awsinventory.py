@@ -17,9 +17,11 @@ for acc in acc_list:
     style = xlwt.easyxf('font: bold 1')
     for name in sheet_name:
         book.add_sheet(name)
-    for i in range(len(sheet_name)):
-        sheet = book.get_sheet(i)
+
     for j, name in enumerate(sheet_ec2):
+        for i,val in enumerate(sheet_name):
+            if val == 'EC2':
+                sheet = book.get_sheet(i)
         row_counter = 0
         sheet.col(j).width = 256 * len(name)
         sheet.write(row_counter, j, name, style)
