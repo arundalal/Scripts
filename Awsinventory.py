@@ -8,17 +8,18 @@ for acc in acc_list:
 
     #####################
     sheet_name = ["EC2","VPC","Sec_GP"]
-    
-    sheet_list = [["Instance Name","Instance ID","Instance State","Private IP","Elastic IP","Instance Type","Instance Security GP","Instance VPC NAME","Instance Subnet NAME"], ["VPC Name","VPC ID","VPC CIDR Block","Subnet Name","Subnet ID","Subnet CIDR Block","Subnet A-Z"], ["Security Group Name","Security Group ID","Security Group VPC","Sec Gp VPC ID","Inbound Source","Inbound Port","Protocol","Egress Source","Egress Port Protocol"]]
+    sheet_ec2 = ["Instance Name","Instance ID","Instance State","Private IP","Elastic IP","Instance Type","Instance Security GP","Instance VPC NAME","Instance Subnet NAME"] 
+    sheet_vpc = ["VPC Name","VPC ID","VPC CIDR Block","Subnet Name","Subnet ID","Subnet CIDR Block","Subnet A-Z"]
+    sheet_secgp = ["Security Group Name","Security Group ID","Security Group VPC","Sec Gp VPC ID","Inbound Source","Inbound Port","Protocol","Egress Source","Egress Port Protocol"]
     
 ######Creating Initial WorkBooks####
     book = xlwt.Workbook(encoding="utf-8")
     style = xlwt.easyxf('font: bold 1')
     for name in sheet_name:
         book.add_sheet(name)
-    for i, value in enumerate(sheet_list):
+    for i in range(len(sheet_name)):
         sheet = book.get_sheet(i)
-        for j, name in enumerate(value):
+        for j, name in enumerate(sheet_ec2):
             row_counter = 0
             sheet.col(j).width = 256 * len(name)
             sheet.write(row_counter, j, name, style)
