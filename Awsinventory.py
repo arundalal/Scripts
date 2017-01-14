@@ -60,4 +60,12 @@ for acc in acc_list:
                     for j, name in enumerate(data_list):
                         sheet.write(row_counter, j, name)
                     book.save("Inventory_AWS_%s.xls" %aws_profile)
-                
+            
+            elif val == 'VPC':
+                sheet = book.get_sheet(i)
+                for j, name in enumerate(sheet_ec2):
+                    row_counter = 0
+                    sheet.col(j).width = 256 * len(name)
+                    sheet.write(row_counter, j, name, style)
+                session = boto3.session.Session(profile_name=aws_profile)
+                ec2 = session.resource('ec2')    
