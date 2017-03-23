@@ -16,7 +16,7 @@ elem.send_keys(Keys.RETURN)
 element = WebDriverWait(driver, 10).until(
         EC.title_is((By.ID, "Your conversion is completed - OnlineVideoConverter.com"))
 
-print element
+print element.get_attribute("title")
 
 downelem = driver.find_element_by_id("downloadq")
-print downelem.get_attribute("href")        
+print downelem.get_attribute("href")
