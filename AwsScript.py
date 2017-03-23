@@ -309,7 +309,7 @@ attachments = ['Bancbox_AWS_PROD.xls', 'Bancbox_AWS_PREPROD.xls', 'Bancbox_AWS_Q
 host = 'localhost' # specify port, if required, using this notations
 
 fromaddr = 'NetOps@localhost' # must be a vaild 'from' address in your GApps account
-toaddr  = 'netops-team@finxera.com'
+toaddr  = 'netops-team@localhost'
 replyto = fromaddr # unless you want a different reply-to
 
 msgsubject = 'Finxera AWS Accounts Inventory'
