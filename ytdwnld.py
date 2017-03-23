@@ -14,7 +14,7 @@ elem.clear()
 elem.send_keys("https://www.youtube.com/watch?v=7Qp5vcuMIlk&list=PLaq655wqcKDnUvTOizhqwNCiiF_grL1vh")
 elem.send_keys(Keys.RETURN)
 element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, "myDynamicElement"))
+        EC.title_is("Your conversion is completed - OnlineVideoConverter.com")
     )
 print element.get_attribute("title")
 eleme = driver.find_element_by_id("downloadq")
